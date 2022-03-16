@@ -44,23 +44,20 @@ fn main() {
     input! {
         n: usize,
     }
-    let mut s = [];
     for i in 0..(1 << n) {
         let mut s: String = "".to_string();
-        for j in 0..n {
-            if (!(i >> j) & 1 == 1) {
+        for j in (0..n).rev() {
+            if !(i >> j) & 1 == 1 {
                 s += "("
             } else {
                 s += ")";
             }
         }
         let _y = &s;
-        if is_print(_y.to_string()) {
-            
-        }
-    }
-    for(s){
 
+        if is_print(_y.to_string()) {
+            print!("{}\n", _y.to_string())
+        }
     }
 }
 
